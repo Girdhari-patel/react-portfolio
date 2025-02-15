@@ -38,8 +38,7 @@
  
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars } from "react-icons/fa";
-import { FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
