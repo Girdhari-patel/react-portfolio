@@ -38,7 +38,7 @@
  
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
