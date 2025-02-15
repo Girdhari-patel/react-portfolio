@@ -37,7 +37,7 @@
 // export default NavBar;
  
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
@@ -53,7 +53,8 @@ const NavBar = () => {
 
   // Toggle mobile menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
+  const navLinsStyle = "text-white hover:text-yellow-400 transition-all duration-300";
+  const navLinsStyleActive = "text-yellow-400";
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
@@ -62,11 +63,11 @@ const NavBar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/" className="text-white hover:text-yellow-400 transition-all duration-300">Home</Link>
-          <Link to="/projects" className="text-white hover:text-yellow-400 transition-all duration-300">Projects</Link>
-          <Link to="/resume" className="text-white hover:text-yellow-400 transition-all duration-300">Resume</Link>
-          <Link to="/about" className="text-white hover:text-yellow-400 transition-all duration-300">About</Link>
-          <Link to="/contact" className="text-white hover:text-yellow-400 transition-all duration-300">Contact</Link>
+          <NavLink to="/" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} >Home</NavLink>
+          <NavLink to="/projects"className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} >Projects</NavLink>
+          <NavLink to="/resume" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`}  >Resume</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} >About</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} >Contact</NavLink>
         </div>
 
         {/* Mobile Menu Button (Hamburger) */}
@@ -80,11 +81,11 @@ const NavBar = () => {
         <button onClick={toggleMenu} className="absolute top-6 right-8 text-white text-3xl">
           <FaTimes />
         </button>
-        <Link to="/" className="text-white text-xl hover:text-yellow-400 transition-all duration-300" onClick={toggleMenu}>Home</Link>
-        <Link to="/projects" className="text-white text-xl hover:text-yellow-400 transition-all duration-300" onClick={toggleMenu}>Projects</Link>
-        <Link to="/resume" className="text-white text-xl hover:text-yellow-400 transition-all duration-300" onClick={toggleMenu}>Resume</Link>
-        <Link to="/about" className="text-white text-xl hover:text-yellow-400 transition-all duration-300" onClick={toggleMenu}>About</Link>
-        <Link to="/contact" className="text-white text-xl hover:text-yellow-400 transition-all duration-300" onClick={toggleMenu}>Contact</Link>
+        <NavLink to="/" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} onClick={toggleMenu}>Home</NavLink>
+        <NavLink to="/projects" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} onClick={toggleMenu}>Projects</NavLink>
+        <NavLink to="/resume"  className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} onClick={toggleMenu}>Resume</NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} onClick={toggleMenu}>About</NavLink>
+        <NavLink to="/contact"  className={({ isActive }) => isActive ? `${navLinsStyleActive}` : `${navLinsStyle}`} onClick={toggleMenu}>Contact</NavLink>
       </div>
     </nav>
   );

@@ -12,7 +12,7 @@ import emailjs from '@emailjs/browser';
 
 
 const templateParams = {
- to_name: 'Girdhari',
+  to_name: 'Girdhari',
   from_name: formData.name,
   from_email: formData.email,
   message: formData.message,
@@ -20,6 +20,7 @@ const templateParams = {
 const service_id = 'service_7inxbsf';
 const template_id = 'template_qz0adxy';
 const publicKey = 'ASE30loEWvZwXpHao';
+
 
 const sentEmail = () => { 
   emailjs
@@ -43,7 +44,8 @@ const sentEmail = () => {
       alert("Please fill out the entire form.");
       return
     }
-    sentEmail();
+    // sentEmail();
+    console.log(formData.email);
     alert('Message sent to Girdhari');
   };
 
