@@ -34,6 +34,16 @@ const Projects = () => {
             <a href="https://github.com/Girdhari-patel/chat-app2-final/tree/main/chat%20app2" className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-black-700 transition-all duration-300">github</a>
             </div>
           </div>
+
+             {/* Project 4 */}
+             <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+            <h3 className="text-2xl font-semibold">Ecommerce using Redux</h3>
+            <p className="mt-4 text-gray-400"> React.js , Firebase Database , react-router-dom , react-toastify , Redux-toolkit</p>
+            <div className="flex justify-evenly  mt-6">
+            <a href="https://chat-app2-final.vercel.app/" className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300">View Project</a>
+            <a href="https://github.com/Girdhari-patel/chat-app2-final/tree/main/chat%20app2" className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-black-700 transition-all duration-300">github</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
