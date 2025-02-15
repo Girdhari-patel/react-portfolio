@@ -1,6 +1,7 @@
 // src/components/Contact.js
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Successmsg from './successmsg';
  const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -40,7 +41,7 @@ const sentEmail = () => {
     e.preventDefault();
     console.log(formData);
     sentEmail();
-    alert('Message sent!');
+    alert(<Successmsg/>);
   };
 
   return (
