@@ -53,8 +53,11 @@ const NavBar = () => {
 
   // Toggle mobile menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  // Nav links style
   const navLinsStyle = "text-white hover:text-yellow-400 transition-all duration-300";
-  const navLinsStyleActive = "text-yellow-400";
+  const navLinsStyleActive = "text-yellow-500";
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
