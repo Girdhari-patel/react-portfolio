@@ -40,7 +40,7 @@ const sentEmail = () => {
     e.preventDefault();
     console.log(formData);
     sentEmail();
-    alert(<Successmsg/>);
+    alert('Message sent!');
   };
 
   return (
