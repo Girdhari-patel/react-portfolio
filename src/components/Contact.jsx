@@ -41,7 +41,6 @@ const sentEmail = () => {
     console.log(formData);
     sentEmail();
     alert('Message sent!');
-    <Successmsg/>
   };
 
   return (
