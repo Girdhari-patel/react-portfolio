@@ -1,6 +1,8 @@
 // src/components/Contact.js
 import React, { useState } from 'react';
-
+import emailjs from '@emailjs/browser';
+import Successmsg from './successmsg';
+ 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -9,9 +11,39 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+const templateParams = {
+ to_name: 'Girdhari',
+  from_name: formData.name,
+  from_email: formData.email,
+  message: formData.message,
+};
+const service_id = 'service_7inxbsf';
+const template_id = 'template_qz0adxy';
+const publicKey = 'ASE30loEWvZwXpHao';
+
+const sentEmail = () => { 
+  emailjs
+    .send(service_id, template_id, templateParams, {
+      publicKey: publicKey,
+    })
+    .then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        return 1;
+      },
+      (err) => {
+        console.log('FAILED...', err);
+        return 0;
+      },
+    );
+};
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
+    sentEmail();
     alert('Message sent!');
+    <Successmsg/>
   };
 
   return (
