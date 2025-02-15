@@ -1,5 +1,5 @@
 // src/components/Contact.js
-import React, { useState } from 'react';
+import React, { useRef, useState,} from 'react';
 import emailjs from '@emailjs/browser';
  const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -8,6 +8,8 @@ import emailjs from '@emailjs/browser';
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+
 
 const templateParams = {
  to_name: 'Girdhari',
@@ -35,12 +37,14 @@ const sentEmail = () => {
       },
     );
 };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    if(formData.name=='' || formData.email=='' || formData.message == ''){
+      alert("Please fill out the entire form.");
+      return
+    }
     sentEmail();
-    alert('Message sent!');
+    alert('Message sent to Girdhari');
   };
 
   return (
