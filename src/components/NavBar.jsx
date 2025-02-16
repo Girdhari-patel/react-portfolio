@@ -59,7 +59,7 @@ const NavBar = () => {
   const navLinsStyleActive = "text-yellow-500";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-all duration-300 ease-in-out ${isScrolled ? 'h-14 bg-linear-to-t from-blue-800 to-indigo-900 shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-3xl font-bold text-white">My Portfolio</div>
