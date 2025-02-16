@@ -44,7 +44,7 @@ const sentEmail = () => {
       alert("Please fill out the entire form.");
       return
     }
-    // sentEmail();
+    sentEmail();
     console.log(formData.email);
     alert('Message sent to Girdhari');
   };
